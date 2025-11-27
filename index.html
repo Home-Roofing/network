@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Top-Rated Roofing Services for Homeowners</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Trusted roofing services for homeowners: inspections, repairs, and replacements by licensed professionals. Get a free roof quote today."
+  />
+  <style>
+    :root {
+      --primary: #1f4f7b;
+      --primary-dark: #153757;
+      --bg-main: #0b1220;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --border-soft: #e5e7eb;
+      --white: #ffffff;
+      --shadow-soft: 0 18px 35px rgba(15, 23, 42, 0.12);
+      --radius-lg: 18px;
+      --radius-xl: 28px;
+      --transition-fast: 0.2s ease-in-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      font-size: 17px; /* base grande para +35 */
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Layout wrapper (mobile first) */
+    .page {
+      min-height: 100vh;
+display: flex;
+justify-content: center;
+padding: 16px;
+
+/* Background agregado */
+background-image: url("https://i.postimg.cc/yNpJKJDY/image.png");
+background-size: cover;         /* La imagen cubre todo el fondo */
+background-position: center;    /* Centrada */
+background-repeat: no-repeat;   /* Sin repetición */
+background-attachment: fixed;   /* Efecto elegante tipo parallax opcional */
+
+    }
+
+    .card-shell {
+      width: 100%;
+      max-width: 1200px;
+      background: radial-gradient(circle at top left, #102a43, #020617);
+      border-radius: 24px;
+      padding: 1px;
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.75);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-inner {
+      background: linear-gradient(135deg, #ffffff, #f3f4f6);
+      border-radius: 23px;
+      padding: 20px 16px 24px;
+    }
+
+    @media (min-width: 900px) {
+      .card-inner {
+        padding: 28px 32px 36px;
+        border-radius: 31px;
+      }
+    }
+
+    .glow {
+      position: absolute;
+      inset: -120px;
+      pointer-events: none;
+      opacity: 0.4;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(96, 165, 250, 0.35), transparent 60%),
+        radial-gradient(circle at 100% 0%, rgba(248, 250, 252, 0.45), transparent 65%),
+        radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.25), transparent 55%);
+      mix-blend-mode: screen;
+      z-index: -1;
+    }
+
+    /* Top bar */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #facc15, #eab308);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #111827;
+      font-weight: 800;
+      font-size: 20px;
+      box-shadow: 0 10px 25px rgba(251, 191, 36, 0.6);
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name span:first-child {
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #111827;
+    }
+
+    .brand-name span:last-child {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(22, 163, 74, 0.08);
+      color: #166534;
+      border: 1px solid rgba(22, 163, 74, 0.16);
+      white-space: nowrap;
+    }
+
+    .trust-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 480px) {
+      .trust-badge {
+        font-size: 11px;
+        padding: 5px 8px;
+      }
+    }
+
+    /* Main layout (mobile = 1 columna) */
+    .content-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    @media (min-width: 900px) {
+      .content-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        gap: 30px;
+        align-items: flex-start;
+      }
+    }
+
+    /* Hero / izquierda */
+    .hero {
+      padding-right: 0;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.03);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      font-size: 12px;
+      color: #4b5563;
+      margin-bottom: 10px;
+    }
+
+    .hero-eyebrow-pill {
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      color: #ecfdf5;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-size: clamp(26px, 7vw, 34px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: #020617;
+      margin-bottom: 10px;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(120deg, #1f2933, #1d4ed8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .hero-subtitle strong {
+      color: #111827;
+      font-weight: 600;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #f9fafb;
+      font-weight: 700;
+      font-size: 16px;
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.28);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+        background var(--transition-fast);
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+    }
+
+    .btn-primary span.arrow {
+      font-size: 18px;
+      transform: translateX(2px);
+      transition: transform var(--transition-fast);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 40px rgba(15, 23, 42, 0.38);
+      background: linear-gradient(135deg, #24598a, #102a43);
+    }
+
+    .btn-primary:hover .arrow {
+      transform: translateX(5px);
+    }
+
+    .hero-note {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 260px;
+    }
+
+    .hero-note strong {
+      color: #111827;
+      font-weight: 600;
+    }
+
+    .hero-divider {
+      height: 1px;
+      margin: 18px 0;
+      background: linear-gradient(
+        90deg,
+        rgba(148, 163, 184, 0.08),
+        rgba(148, 163, 184, 0.4),
+        rgba(148, 163, 184, 0.05)
+      );
+    }
+
+    .trust-row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: 900px) {
+      .trust-row {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .trust-row-logos {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .trust-pill {
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      font-size: 12px;
+      color: #4b5563;
+      background: rgba(248, 250, 252, 0.9);
+    }
+
+    .rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(251, 191, 36, 0.6);
+      background: rgba(254, 249, 195, 0.7);
+      color: #92400e;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .rating-stars {
+      font-size: 14px;
+    }
+
+    /* Qualification grid */
+    .qualify-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    @media (min-width: 640px) {
+      .qualify-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .qualify-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .qualify-item {
+      padding: 12px 12px;
+      border-radius: 14px;
+      background: #f9fafb;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 14px;
+      color: #4b5563;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .qualify-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #22c55e;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .qualify-item strong {
+      display: block;
+      color: #111827;
+      margin-bottom: 2px;
+      font-size: 15px;
+    }
+
+    /* Testimonials section (bigger text, mobile friendly) */
+    .testimonials-section {
+      margin-top: 24px;
+      padding: 22px 16px;
+      background: linear-gradient(135deg, #e5f0ff, #d1fae5);
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+
+    .testimonials-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .testimonials-title {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: #020617;
+    }
+
+    @media (min-width: 640px) {
+      .testimonials-title {
+        font-size: 22px;
+      }
+    }
+
+    .rating-line {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .rating-label {
+      font-weight: 700;
+      color: #047857;
+    }
+
+    .rating-score {
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .rating-stars-inline svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .rating-subtitle {
+      text-align: center;
+      color: #4b5563;
+      font-size: 13px;
+    }
+
+    .testimonials-slider {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .slider-window {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      flex: 1;
+    }
+
+    .slider-track {
+      display: flex;
+      gap: 14px;
+      padding-bottom: 4px;
+    }
+
+    .testimonial-card {
+      flex: 0 0 240px;
+      background: #ffffff;
+      padding: 14px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(15, 23, 42, 0.18);
+      scroll-snap-align: center;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    @media (min-width: 640px) {
+      .testimonial-card {
+        flex: 0 0 260px;
+        padding: 16px;
+      }
+    }
+
+    .testimonial-stars svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .testimonial-text {
+      margin: 10px 0;
+      color: #111827;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .testimonial-author {
+      font-weight: 700;
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    .slider-arrow {
+      width: 38px;
+      height: 38px;
+      border: none;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.3);
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #111827;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+        background var(--transition-fast);
+    }
+
+    .slider-arrow:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.4);
+      background: #eff6ff;
+    }
+
+    @media (max-width: 480px) {
+      .slider-arrow {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+      }
+    }
+
+    /* Form / derecha */
+    .form-card {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      padding: 18px 16px 20px;
+      border: 1px solid rgba(15, 23, 42, 0.07);
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (min-width: 900px) {
+      .form-card {
+        padding: 20px 20px 22px;
+      }
+    }
+
+    .form-header {
+      margin-bottom: 12px;
+    }
+
+    .form-header-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #020617;
+      margin-bottom: 6px;
+    }
+
+    .form-header-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .form-section-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6b7280;
+      margin: 10px 0 6px;
+      font-weight: 600;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    label {
+      font-size: 15px;
+      color: #374151;
+      font-weight: 500;
+    }
+
+    .required {
+      color: #b91c1c;
+      margin-left: 3px;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    @media (min-width: 480px) {
+      .radio-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    .radio-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: #f9fafb;
+      cursor: pointer;
+      font-size: 15px;
+      transition: border-color var(--transition-fast), background var(--transition-fast),
+        box-shadow var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .radio-pill input {
+      margin: 0;
+      width: 18px;
+      height: 18px;
+    }
+
+    .radio-pill:hover {
+      border-color: rgba(37, 99, 235, 0.75);
+      background: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(148, 163, 184, 0.5);
+    }
+
+    .submit-row {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 16px 18px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      color: #fefce8;
+      font-weight: 800;
+      font-size: 17px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      box-shadow: 0 18px 32px rgba(194, 65, 12, 0.5);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+        background var(--transition-fast);
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 40px rgba(154, 52, 18, 0.7);
+      background: linear-gradient(135deg, #fb923c, #c2410c);
+    }
+
+    .submit-caption {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .disclaimer {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    .seal {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      width: 64px;
+      height: 64px;
+      border-radius: 999px;
+      border: 2px solid rgba(15, 23, 42, 0.12);
+      background: conic-gradient(
+        from 220deg,
+        rgba(37, 99, 235, 0.06),
+        rgba(249, 115, 22, 0.18),
+        rgba(99, 102, 241, 0.08),
+        rgba(37, 99, 235, 0.06)
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: #111827;
+      text-align: center;
+      padding: 8px;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.35);
+    }
+
+    @media (max-width: 480px) {
+      .seal {
+        display: none;
+      }
+    }
+
+    /* Footer */
+    .footer-strip {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      font-size: 12px;
+      color: #6b7280;
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      padding-top: 10px;
+      gap: 10px;
+    }
+
+    .footer-strip span strong {
+      color: #111827;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="card-shell">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="card-inner">
+        <!-- Top bar -->
+        <div class="top-bar">
+          <div class="brand">
+            <div class="brand-logo" aria-hidden="true">HR</div>
+            <div class="brand-name">
+              <span>HomeRoofing Network</span>
+              <span>Verified US Roofing Partners</span>
+            </div>
+          </div>
+          <div class="trust-badge">
+            <span class="trust-dot"></span>
+            <span>Licensed &amp; insured contractors only</span>
+          </div>
+        </div>
+
+        <!-- Main grid -->
+        <div class="content-grid">
+          <!-- Left / hero -->
+          <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-eyebrow">
+              <span class="hero-eyebrow-pill">For Homeowners Only</span>
+              <span>Qualify in under 60 seconds</span>
+            </div>
+
+            <h1 id="hero-title" class="hero-title">
+              Top-Rated <span class="hero-highlight">Roofing Services</span> for US Homeowners
+            </h1>
+
+            <p class="hero-subtitle">
+              Protect your most valuable asset with
+              <strong>expert roof inspections, repairs, and replacements</strong>.  
+              We match homeowners with trusted, pre-screened roofing contractors in their area.
+            </p>
+
+            <div class="hero-cta-row">
+              <a href="#quote-form" class="btn-primary">
+                <span>Get My Free Roof Quote</span>
+                <span class="arrow">→</span>
+              </a>
+              <span class="hero-note">
+                <strong>No obligation.</strong> Only licensed &amp; insured roofing pros.
+              </span>
+            </div>
+
+            <div class="hero-divider"></div>
+
+            <div class="trust-row">
+              <div class="trust-row-logos">
+                <div class="rating-badge">
+                  <span class="rating-stars">★★★★★</span>
+                  <span>4.8 average homeowner rating</span>
+                </div>
+                <div class="trust-pill">Background-checked contractors</div>
+                <div class="trust-pill">Local &amp; US-based support</div>
+              </div>
+              <div>
+                Serving homeowners needing <strong>repairs, storm damage help</strong>,  
+                or a full <strong>roof replacement</strong>.
+              </div>
+            </div>
+
+            <div class="qualify-grid" aria-label="Who this roofing service is for">
+              <div class="qualify-item">
+                <div class="qualify-dot"></div>
+                <div>
+                  <strong>Homeowners only</strong>
+                  You must own the property (no renters).
+                </div>
+              </div>
+
+              <div class="qualify-item">
+                <div class="qualify-dot"></div>
+                <div>
+                  <strong>Single-family homes</strong>
+                  Ideal for detached homes &amp; townhomes.
+                </div>
+              </div>
+
+              <div class="qualify-item">
+                <div class="qualify-dot"></div>
+                <div>
+                  <strong>Roof issues or upgrades</strong>
+                  Leaks, storm damage, aging roof, or upgrades.
+                </div>
+              </div>
+
+              <div class="qualify-item">
+                <div class="qualify-dot"></div>
+                <div>
+                  <strong>US-based properties</strong>
+                  Service network focused on US homeowners.
+                </div>
+              </div>
+
+              <div class="qualify-item">
+                <div class="qualify-dot"></div>
+                <div>
+                  <strong>Ready for estimates</strong>
+                  Open to a free inspection &amp; quote.
+                </div>
+              </div>
+
+              <div class="qualify-item">
+                <div class="qualify-dot"></div>
+                <div>
+                  <strong>Insurance claims welcome</strong>
+                  Many partners assist with insurance paperwork.
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonials Section -->
+            <section class="testimonials-section">
+              <div class="testimonials-inner">
+                <header class="testimonials-header">
+                  <h2 class="testimonials-title">Our homeowners say it best</h2>
+
+                  <div class="rating-line">
+                    <span class="rating-label">Excellent</span>
+                    <span class="rating-score">4.8 / 5</span>
+
+                    <div class="rating-stars-inline">
+                      <!-- 5 stars Trustpilot style -->
+                      <svg width="24" height="24" viewBox="0 0 32 32">
+                        <rect width="32" height="32" fill="#00b67a"></rect>
+                        <path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/>
+                      </svg>
+                      <svg width="24" height="24" viewBox="0 0 32 32">
+                        <rect width="32" height="32" fill="#00b67a"></rect>
+                        <path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/>
+                      </svg>
+                      <svg width="24" height="24" viewBox="0 0 32 32">
+                        <rect width="32" height="32" fill="#00b67a"></rect>
+                        <path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/>
+                      </svg>
+                      <svg width="24" height="24" viewBox="0 0 32 32">
+                        <rect width="32" height="32" fill="#00b67a"></rect>
+                        <path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/>
+                      </svg>
+                      <svg width="24" height="24" viewBox="0 0 32 32">
+                        <rect width="32" height="32" fill="#00b67a"></rect>
+                        <path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <p class="rating-subtitle">Based on 993 homeowner reviews</p>
+                </header>
+
+                <div class="testimonials-slider">
+                  <button class="slider-arrow slider-left" type="button" aria-label="Previous testimonial">
+                    &#8592;
+                  </button>
+
+                  <div class="slider-window">
+                    <div class="slider-track">
+                      <!-- Card 1 -->
+                      <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                          <!-- 5 stars -->
+                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
+                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
+                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
+                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
+                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
+                        </div>
+                        <p class="testimonial-text">
+                          “HomeRoofing Network got us in touch with a local roofer the same day. They fixed our leak before the next storm hit. Professional from start to finish.”
+                        </p>
+                        <p class="testimonial-author">Mark T., Dallas, TX</p>
+                      </div>
+
+                      <!-- Card 2 -->
+                      <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
+                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
+                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
+                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
+                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
+                        </div>
+                        <p class="testimonial-text">
+                          “We needed a full roof replacement after hail damage. The contractor they matched us with handled the insurance claim and kept us updated every step of the way.”
+                        </p>
+                        <p class="testimonial-author">Jennifer L., Denver, CO</p>
+                      </div>
+
+                      <!-- Card 3 -->
+                      <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
+                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
+                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
+                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
+                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
+                        </div>
+                        <p class="testimonial-text">
+                          “Quick response, honest estimate, and the crew left our yard spotless. I’d recommend them to any homeowner needing roof work.”
+                        </p>
+                        <p class="testimonial-author">Chris D., Tampa, FL</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button class="slider-arrow slider-right" type="button" aria-label="Next testimonial">
+                    &#8594;
+                  </button>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          <!-- Right / form -->
+          <aside class="form-card" aria-label="Roofing quote request form">
+            <div class="seal" aria-hidden="true">
+              Free<br />
+              Roof Quote
+            </div>
+
+            <div class="form-header">
+              <div class="form-header-title">
+                Check if you qualify for a free roof offer
+              </div>
+              <div class="form-header-sub">
+                Answer one quick question to see if we can match you with a local roofing specialist.
+              </div>
+            </div>
+
+            <!-- Simplified form: homeowner radio + button -->
+            <form
+              id="quote-form"
+              action="https://your-partner-link.com"
+              method="get"
+            >
+              <div class="form-section-label">Homeownership</div>
+
+              <div class="field-group">
+                <label>
+                  Do you own this home?
+                  <span class="required">*</span>
+                </label>
+                <div class="radio-group">
+                  <label class="radio-pill">
+                    <input type="radio" name="homeowner" value="yes" required />
+                    <span>Yes, I own this home</span>
+                  </label>
+                  <label class="radio-pill">
+                    <input type="radio" name="homeowner" value="no" />
+                    <span>No, I am renting</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="submit-row">
+                <button type="submit" class="btn-submit">
+                  Get My Offer Quote
+                </button>
+                <div class="submit-caption">
+                  By clicking “Get My Offer Quote” you may be redirected to one of our
+                  trusted roofing partners to complete your request.
+                </div>
+              </div>
+
+              <p class="disclaimer">
+                Your answer helps us verify that you are a homeowner and qualify for our roofing partner network.
+              </p>
+            </form>
+          </aside>
+        </div>
+
+        <!-- Bottom strip -->
+        <div class="footer-strip">
+          <span>
+            <strong>HomeRoofing Network</strong> – Connecting US homeowners with trusted roofing pros.
+          </span>
+          <div class="footer-links">
+            <a href="#0">Privacy Policy</a>
+            <a href="#0">Terms of Use</a>
+            <a href="#0">Do Not Sell My Info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS for testimonials slider -->
+  <script>
+    (function () {
+      const sliderWindow = document.querySelector('.slider-window');
+      const prev = document.querySelector('.slider-left');
+      const next = document.querySelector('.slider-right');
+
+      if (!sliderWindow || !prev || !next) return;
+
+      function slide(dir) {
+        sliderWindow.scrollBy({
+          left: dir * sliderWindow.offsetWidth * 0.9,
+          behavior: "smooth"
+        });
+      }
+
+      prev.addEventListener("click", () => slide(-1));
+      next.addEventListener("click", () => slide(1));
+    })();
+  </script>
+</body>
+</html>
