@@ -1,1080 +1,1081 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Top-Rated Roofing Services for Homeowners</title>
+  <meta charset="utf-8" />
+  <!-- no zoom meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Trusted roofing services for homeowners: inspections, repairs, and replacements by licensed professionals. Get a roof quote today."
-  />
+  <title>Roof Risk Calculator | Prelanding</title>
+
   <style>
-    :root {
-      --primary: #1f4f7b;
-      --primary-dark: #153757;
-      --bg-main: #0b1220;
-      --text-main: #111827;
-      --text-muted: #4b5563;
-      --border-soft: #e5e7eb;
-      --white: #ffffff;
-      --shadow-soft: 0 18px 35px rgba(15, 23, 42, 0.12);
-      --radius-lg: 18px;
-      --radius-xl: 28px;
-      --transition-fast: 0.2s ease-in-out;
+    :root{
+      --bg:#ffffff;
+      --ink:#0b0b0b;
+      --muted:#3b3b3b;
+      --line:rgba(0,0,0,.12);
+      --red:#c40000;
+      --soft:#f6f6f6;
+      --shadow: 0 18px 45px rgba(0,0,0,.10);
+      --radius: 18px;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
     }
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background-color: var(--bg-main);
-      color: var(--text-main);
-      line-height: 1.6;
-      font-size: 17px; /* base grande para +35 */
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* Layout wrapper (mobile first) */
-    .page {
-      min-height: 100vh;
-display: flex;
-justify-content: center;
-padding: 16px;
-
-/* Background agregado */
-background-image: url("https://i.postimg.cc/yNpJKJDY/image.png");
-background-size: cover;         /* La imagen cubre todo el fondo */
-background-position: center;    /* Centrada */
-background-repeat: no-repeat;   /* Sin repetición */
-background-attachment: fixed;   /* Efecto elegante tipo parallax opcional */
-
-    }
-
-    .card-shell {
-      width: 100%;
-      max-width: 1200px;
-      background: radial-gradient(circle at top left, #102a43, #020617);
-      border-radius: 24px;
-      padding: 1px;
-      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.75);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card-inner {
-      background: linear-gradient(135deg, #ffffff, #f3f4f6);
-      border-radius: 23px;
-      padding: 20px 16px 24px;
-    }
-
-    @media (min-width: 900px) {
-      .card-inner {
-        padding: 28px 32px 36px;
-        border-radius: 31px;
-      }
-    }
-
-    .glow {
-      position: absolute;
-      inset: -120px;
-      pointer-events: none;
-      opacity: 0.4;
-      background:
-        radial-gradient(circle at 0% 0%, rgba(96, 165, 250, 0.35), transparent 60%),
-        radial-gradient(circle at 100% 0%, rgba(248, 250, 252, 0.45), transparent 65%),
-        radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.25), transparent 55%);
-      mix-blend-mode: screen;
-      z-index: -1;
-    }
-
-    /* Top bar */
-    .top-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 18px;
-      gap: 12px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #facc15, #eab308);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #111827;
-      font-weight: 800;
-      font-size: 20px;
-      box-shadow: 0 10px 25px rgba(251, 191, 36, 0.6);
-      flex-shrink: 0;
-    }
-
-    .brand-name {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .brand-name span:first-child {
-      font-weight: 700;
-      font-size: 15px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: #111827;
-    }
-
-    .brand-name span:last-child {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .trust-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(22, 163, 74, 0.08);
-      color: #166534;
-      border: 1px solid rgba(22, 163, 74, 0.16);
-      white-space: nowrap;
-    }
-
-    .trust-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
-      flex-shrink: 0;
-    }
-
-    @media (max-width: 480px) {
-      .trust-badge {
-        font-size: 11px;
-        padding: 5px 8px;
-      }
-    }
-
-    /* Main layout (mobile = 1 columna) */
-    .content-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    @media (min-width: 900px) {
-      .content-grid {
-        display: grid;
-        grid-template-columns: 1.3fr 1fr;
-        gap: 30px;
-        align-items: flex-start;
-      }
-    }
-
-    /* Hero / izquierda */
-    .hero {
-      padding-right: 0;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.03);
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      font-size: 12px;
-      color: #4b5563;
-      margin-bottom: 10px;
-    }
-
-    .hero-eyebrow-pill {
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: #22c55e;
-      color: #ecfdf5;
-      font-size: 11px;
-      font-weight: 600;
-    }
-
-    .hero-title {
-      font-size: clamp(26px, 7vw, 34px);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      color: #020617;
-      margin-bottom: 10px;
-    }
-
-    .hero-highlight {
-      background: linear-gradient(120deg, #1f2933, #1d4ed8);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: 16px;
-      color: var(--text-muted);
-      margin-bottom: 18px;
-    }
-
-    .hero-subtitle strong {
-      color: #111827;
-      font-weight: 600;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 16px;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 24px;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: #f9fafb;
-      font-weight: 700;
-      font-size: 16px;
-      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.28);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
-        background var(--transition-fast);
-      width: 100%;
-      max-width: 320px;
-      text-align: center;
-    }
-
-    .btn-primary span.arrow {
-      font-size: 18px;
-      transform: translateX(2px);
-      transition: transform var(--transition-fast);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 22px 40px rgba(15, 23, 42, 0.38);
-      background: linear-gradient(135deg, #24598a, #102a43);
-    }
-
-    .btn-primary:hover .arrow {
-      transform: translateX(5px);
-    }
-
-    .hero-note {
-      font-size: 14px;
-      color: var(--text-muted);
-      max-width: 260px;
-    }
-
-    .hero-note strong {
-      color: #111827;
-      font-weight: 600;
-    }
-
-    .hero-divider {
-      height: 1px;
-      margin: 18px 0;
-      background: linear-gradient(
-        90deg,
-        rgba(148, 163, 184, 0.08),
-        rgba(148, 163, 184, 0.4),
-        rgba(148, 163, 184, 0.05)
-      );
-    }
-
-    .trust-row {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-    }
-
-    @media (min-width: 900px) {
-      .trust-row {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
-    }
-
-    .trust-row-logos {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .trust-pill {
-      padding: 5px 10px;
-      border-radius: 999px;
-      border: 1px dashed rgba(148, 163, 184, 0.7);
-      font-size: 12px;
-      color: #4b5563;
-      background: rgba(248, 250, 252, 0.9);
-    }
-
-    .rating-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 5px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(251, 191, 36, 0.6);
-      background: rgba(254, 249, 195, 0.7);
-      color: #92400e;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .rating-stars {
-      font-size: 14px;
-    }
-
-    /* Qualification grid */
-    .qualify-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    @media (min-width: 640px) {
-      .qualify-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .qualify-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    .qualify-item {
-      padding: 12px 12px;
-      border-radius: 14px;
-      background: #f9fafb;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      font-size: 14px;
-      color: #4b5563;
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-    }
-
-    .qualify-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: #22c55e;
-      margin-top: 4px;
-      flex-shrink: 0;
-    }
-
-    .qualify-item strong {
-      display: block;
-      color: #111827;
-      margin-bottom: 2px;
-      font-size: 15px;
-    }
-
-    /* Testimonials section (bigger text, mobile friendly) */
-    .testimonials-section {
-      margin-top: 24px;
-      padding: 22px 16px;
-      background: linear-gradient(135deg, #e5f0ff, #d1fae5);
-      border-radius: 20px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-    }
-
-    .testimonials-inner {
-      max-width: 640px;
+    .wrap{
+      max-width: 980px;
       margin: 0 auto;
+      padding: 34px 18px 60px;
     }
 
-    .testimonials-header {
-      text-align: center;
-      margin-bottom: 16px;
+    /* Clean, big “advertorial” type */
+    .headline{
+      margin: 0;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+      line-height: 1.06;
+      font-size: clamp(36px, 5.2vw, 64px);
+      text-align:center;
     }
+    .headline .red{color: var(--red)}
+    .headline em{font-style: italic; font-weight: 900;}
 
-    .testimonials-title {
-      font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 6px;
-      color: #020617;
-    }
-
-    @media (min-width: 640px) {
-      .testimonials-title {
-        font-size: 22px;
-      }
-    }
-
-    .rating-line {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 4px;
-      font-size: 14px;
-    }
-
-    .rating-label {
-      font-weight: 700;
-      color: #047857;
-    }
-
-    .rating-score {
-      font-weight: 600;
-      color: #111827;
-    }
-
-    .rating-stars-inline svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .rating-subtitle {
-      text-align: center;
-      color: #4b5563;
-      font-size: 13px;
-    }
-
-    .testimonials-slider {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 18px;
-    }
-
-    .slider-window {
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      flex: 1;
-    }
-
-    .slider-track {
-      display: flex;
-      gap: 14px;
-      padding-bottom: 4px;
-    }
-
-    .testimonial-card {
-      flex: 0 0 240px;
-      background: #ffffff;
-      padding: 14px;
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(15, 23, 42, 0.18);
-      scroll-snap-align: center;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-    }
-
-    @media (min-width: 640px) {
-      .testimonial-card {
-        flex: 0 0 260px;
-        padding: 16px;
-      }
-    }
-
-    .testimonial-stars svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .testimonial-text {
-      margin: 10px 0;
-      color: #111827;
-      line-height: 1.6;
-      font-size: 14px;
-    }
-
-    .testimonial-author {
-      font-weight: 700;
-      font-size: 13px;
-      color: #4b5563;
-    }
-
-    .slider-arrow {
-      width: 38px;
-      height: 38px;
-      border: none;
-      border-radius: 50%;
-      background: #ffffff;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.3);
-      cursor: pointer;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      color: #111827;
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
-        background var(--transition-fast);
-    }
-
-    .slider-arrow:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.4);
-      background: #eff6ff;
-    }
-
-    @media (max-width: 480px) {
-      .slider-arrow {
-        width: 32px;
-        height: 32px;
-        font-size: 16px;
-      }
-    }
-
-    /* Form / derecha */
-    .form-card {
-      background: #ffffff;
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-soft);
-      padding: 18px 16px 20px;
-      border: 1px solid rgba(15, 23, 42, 0.07);
-      position: relative;
-      overflow: hidden;
-    }
-
-    @media (min-width: 900px) {
-      .form-card {
-        padding: 20px 20px 22px;
-      }
-    }
-
-    .form-header {
-      margin-bottom: 12px;
-    }
-
-    .form-header-title {
-      font-size: 20px;
-      font-weight: 700;
-      color: #020617;
-      margin-bottom: 6px;
-    }
-
-    .form-header-sub {
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    .form-section-label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #6b7280;
-      margin: 10px 0 6px;
-      font-weight: 600;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 4px;
-    }
-
-    .field-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    label {
-      font-size: 15px;
-      color: #374151;
+    .sub{
+      margin: 16px auto 0;
+      max-width: 900px;
+      text-align:center;
+      font-size: clamp(18px, 2.2vw, 26px);
+      line-height: 1.45;
+      color: var(--muted);
       font-weight: 500;
     }
+    .sub .red{color: var(--red); font-weight: 900;}
+    .sub em{font-style: italic}
+    .sub u{text-underline-offset: 4px; text-decoration-thickness: 2px;}
 
-    .required {
-      color: #b91c1c;
-      margin-left: 3px;
+    .bar{
+      margin: 26px auto 0;
+      max-width: 920px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:wrap;
     }
-
-    .radio-group {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 4px;
-    }
-
-    @media (min-width: 480px) {
-      .radio-group {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-    }
-
-    .radio-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
       padding: 10px 14px;
+      border:1px solid var(--line);
       border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      background: #f9fafb;
-      cursor: pointer;
-      font-size: 15px;
-      transition: border-color var(--transition-fast), background var(--transition-fast),
-        box-shadow var(--transition-fast), transform var(--transition-fast);
-    }
-
-    .radio-pill input {
-      margin: 0;
-      width: 18px;
-      height: 18px;
-    }
-
-    .radio-pill:hover {
-      border-color: rgba(37, 99, 235, 0.75);
-      background: #ffffff;
-      transform: translateY(-1px);
-      box-shadow: 0 8px 18px rgba(148, 163, 184, 0.5);
-    }
-
-    .submit-row {
-      margin-top: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .btn-submit {
-      width: 100%;
-      padding: 16px 18px;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      background: linear-gradient(135deg, #f97316, #ea580c);
-      color: #fefce8;
+      background: #fff;
+      box-shadow: var(--shadow);
       font-weight: 800;
-      font-size: 17px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      box-shadow: 0 18px 32px rgba(194, 65, 12, 0.5);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
-        background var(--transition-fast);
+      letter-spacing: .2px;
+      font-variant-numeric: tabular-nums;
+    }
+    .pill span{color:var(--muted); font-weight:700;}
+    .pill b{color:var(--red);}
+
+    .card{
+      margin: 22px auto 0;
+      max-width: 920px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--soft);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-inner{
+      padding: 18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    @media (max-width: 780px){
+      .card-inner{grid-template-columns: 1fr}
     }
 
-    .btn-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 24px 40px rgba(154, 52, 18, 0.7);
-      background: linear-gradient(135deg, #fb923c, #c2410c);
+    .calc-title{
+      margin:0;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: .2px;
     }
-
-    .submit-caption {
-      font-size: 13px;
-      color: var(--text-muted);
-      text-align: center;
+    .calc-title .red{color:var(--red)}
+    .calc-desc{
+      margin: 6px 0 0;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 14px;
     }
+    .calc-desc b{color:#111}
+    .calc-desc u{text-underline-offset: 3px}
 
-    .disclaimer {
+    .controls{margin-top: 14px; display:grid; gap: 12px;}
+    .row{display:grid; grid-template-columns: 1fr 1fr; gap: 10px;}
+    @media (max-width: 520px){ .row{grid-template-columns:1fr} }
+
+    label{
+      display:block;
       font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 8px;
+      font-weight: 900;
+      letter-spacing: .25px;
+      color: #111;
+      margin-bottom: 6px;
     }
-
-    .seal {
-      position: absolute;
-      right: 12px;
-      top: 12px;
-      width: 64px;
-      height: 64px;
-      border-radius: 999px;
-      border: 2px solid rgba(15, 23, 42, 0.12);
-      background: conic-gradient(
-        from 220deg,
-        rgba(37, 99, 235, 0.06),
-        rgba(249, 115, 22, 0.18),
-        rgba(99, 102, 241, 0.08),
-        rgba(37, 99, 235, 0.06)
-      );
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
+    .label-line{
+      display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+    }
+    .label-line .val{
+      font-weight: 950;
+      color: var(--red);
+      font-variant-numeric: tabular-nums;
+    }
+    select, input[type="range"]{width:100%;}
+    select{
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: #111;
+      outline:none;
       font-weight: 700;
-      color: #111827;
-      text-align: center;
-      padding: 8px;
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.35);
+    }
+    input[type="range"]{accent-color: var(--red);}
+
+    .result{
+      border-left: 1px solid var(--line);
+      padding-left: 16px;
+    }
+    @media (max-width: 780px){
+      .result{border-left:0; padding-left:0; border-top:1px solid var(--line); padding-top:16px;}
     }
 
-    @media (max-width: 480px) {
-      .seal {
-        display: none;
-      }
+    .big{
+      margin:0;
+      font-size: 34px;
+      line-height: 1.1;
+      font-weight: 950;
+      letter-spacing: -0.4px;
     }
+    .fine{
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 13px;
+    }
+    .fine u{text-underline-offset: 3px}
 
-    /* Footer */
-    .footer-strip {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 20px;
+    .cta{margin: 16px 0 0;}
+    .btn{
+      width:100%;
+      cursor:pointer;
+      border: 2px solid #111;
+      border-radius: 14px;
+      padding: 18px 16px;
+      font-size: 18px;
+      font-weight: 950;
+      letter-spacing: .6px;
+      background: var(--red);
+      color:#fff;
+      transition: transform .16s ease, filter .16s ease;
+      text-transform: uppercase;
+    }
+    .btn:hover{transform: translateY(-2px); filter: brightness(1.03);}
+    .btn:active{transform: translateY(0px);}
+
+    .micro{
+      margin: 10px 0 0;
+      text-align:center;
       font-size: 12px;
-      color: #6b7280;
-      border-top: 1px solid rgba(148, 163, 184, 0.35);
-      padding-top: 10px;
-      gap: 10px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .micro b{color:#111}
+    .micro u{text-underline-offset: 3px}
+
+    .foot{
+      margin: 14px auto 0;
+      max-width: 920px;
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+      color: #6a6a6a;
+      font-size: 11px;
+      line-height: 1.55;
+      text-align:center;
     }
 
-    .footer-strip span strong {
-      color: #111827;
+    /* ===================== STEPS SECTION ===================== */
+    .steps{
+      margin: 22px auto 0;
+      max-width: 920px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .steps-inner{padding: 20px 18px 18px;}
+    .steps-title{
+      margin:0;
+      text-align:center;
+      font-weight: 950;
+      letter-spacing: -0.4px;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height:1.15;
+      color: #0b0b0b;
+    }
+    .steps-title .red{color: var(--red);}
+    .steps-sub{
+      margin: 10px auto 0;
+      text-align:center;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+      max-width: 70ch;
+    }
+    .steps-sub u{text-underline-offset: 4px; text-decoration-thickness: 2px;}
+    .steps-grid{
+      margin-top: 16px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      align-items:stretch;
+    }
+    @media (max-width: 860px){ .steps-grid{grid-template-columns: 1fr;} }
+
+    .step{
+      border:1px solid var(--line);
+      border-radius: 16px;
+      background: #f7f7f7;
+      overflow:hidden;
+      display:grid;
+      grid-template-rows: auto 1fr;
+      box-shadow: 0 10px 26px rgba(0,0,0,.08);
+    }
+    .step-media{
+      position:relative;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+    }
+    .step-media img{
+      width:100%;
+      height: 180px;
+      object-fit: cover;
+      display:block;
+      filter: contrast(1.02);
+    }
+    @media (max-width: 860px){ .step-media img{height: 210px;} }
+
+    .step-badge{
+      position:absolute;
+      top:12px; left:12px;
+      width:40px; height:40px;
+      border-radius: 999px;
+      background: var(--red);
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-weight: 950;
+      font-size: 16px;
+      border: 2px solid #111;
+      box-shadow: 0 14px 30px rgba(0,0,0,.18);
+    }
+    .step-body{padding: 14px 14px 16px;}
+    .step-body h3{
+      margin:0 0 8px;
+      font-size: 16px;
+      line-height:1.25;
+      letter-spacing: .1px;
+      font-weight: 950;
+      color:#0b0b0b;
+    }
+    .step-body h3 .k{font-weight: 900; color:#111; margin-right:6px;}
+    .step-body h3 .red{color:var(--red)}
+    .step-body h3 u{text-underline-offset: 3px; text-decoration-thickness: 2px;}
+    .step-body p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .step-body p b{color:#111}
+    .steps-cta{
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      text-align:center;
     }
 
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    /* ===================== MODAL FORM ===================== */
+    .rg-modal{position:fixed; inset:0; display:none; z-index:9999;}
+    .rg-modal.open{display:block;}
+    .rg-modal__backdrop{position:absolute; inset:0; background:rgba(0,0,0,.65);}
+    .rg-modal__card{
+      position:relative;
+      width:min(920px, calc(100% - 22px));
+      margin: 24px auto;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px 18px 16px;
+      max-height: calc(100vh - 48px);
+      overflow:auto;
+    }
+    .rg-modal__close{
+      position:absolute; top:12px; right:12px;
+      width:40px; height:40px; border-radius:12px;
+      border:1px solid var(--line);
+      background:#fff;
+      cursor:pointer;
+      font-weight:900;
+    }
+    .rg-modal__h1{
+      margin: 4px 48px 10px 0;
+      font-size: clamp(26px, 3.4vw, 40px);
+      line-height:1.08;
+      letter-spacing:-.4px;
+      font-weight: 950;
+      color:#0b0b0b;
+    }
+    .rg-red{color: var(--red);}
+
+    .rg-progress{display:grid; gap:8px; margin: 8px 0 14px;}
+    .rg-progress__bar{
+      height:10px; border-radius:999px;
+      background: #f0f0f0;
+      border:1px solid var(--line);
+      overflow:hidden;
+    }
+    .rg-progress__bar span{
+      display:block; height:100%;
+      width:0%;
+      background: var(--red);
+      transition: width .22s ease;
+    }
+    .rg-progress__text{
+      font-size:12px;
+      color:#333;
+      font-weight:900;
+      letter-spacing:.2px;
     }
 
-    .footer-links a {
-      text-decoration: underline;
-      text-decoration-style: dotted;
+    .rg-q{
+      margin: 10px 0 6px;
+      font-size: 18px;
+      font-weight: 950;
+      color:#0b0b0b;
+      letter-spacing:-.2px;
+    }
+    .rg-help{
+      margin: 0 0 14px;
+      color:#3b3b3b;
+      font-size: 13px;
+      line-height:1.5;
+    }
+    .rg-help u{text-underline-offset:3px; text-decoration-thickness:2px;}
+
+    .rg-field{display:grid; gap:6px;}
+    .rg-label{font-size:12px; font-weight:950; color:#111; letter-spacing:.2px;}
+    .rg-field input{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:#111;
+      outline:none;
+      font-weight:700;
+    }
+    .rg-field input:focus{border-color: rgba(196,0,0,.45);}
+
+    .rg-error{
+      margin-top:10px;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 900;
+      min-height: 16px;
+    }
+
+    .rg-radioGrid{display:grid; gap:10px; grid-template-columns: 1fr;}
+    .rg-radioGrid--two{grid-template-columns: 1fr 1fr;}
+    @media (max-width:720px){ .rg-radioGrid--two{grid-template-columns:1fr;} }
+
+    .rg-radio{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background:#f7f7f7;
+      cursor:pointer;
+      user-select:none;
+      font-weight: 900;
+      color:#111;
+    }
+    .rg-radio input{accent-color: var(--red);}
+    .rg-radio:hover{filter: brightness(1.01);}
+    .rg-radio span{line-height:1.25;}
+
+    .rg-grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    @media (max-width:720px){ .rg-grid2{grid-template-columns:1fr;} }
+
+    .rg-actions{
+      display:flex;
+      gap:10px;
+      justify-content:flex-end;
+      margin-top: 14px;
+      flex-wrap:wrap;
+    }
+    .rg-btn{
+      cursor:pointer;
+      border-radius: 14px;
+      padding: 14px 14px;
+      font-size: 14px;
+      font-weight: 950;
+      letter-spacing:.4px;
+      border: 1px solid #111;
+      background:#fff;
+      color:#111;
+    }
+    .rg-btn--primary{
+      background: var(--red);
+      color:#fff;
+      border: 2px solid #111;
+      padding: 14px 16px;
+      text-transform: uppercase;
+    }
+
+    .rg-disclaimer{
+      margin: 12px 0 0;
+      padding-top: 12px;
+      border-top:1px solid var(--line);
+      color:#555;
+      font-size: 11px;
+      line-height:1.55;
+      text-align:center;
     }
   </style>
 </head>
+
 <body>
-  <div class="page">
-    <div class="card-shell">
-      <div class="glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <h1 class="headline">
+      Discover Your <span class="red">Roof Risk</span><br/>
+      in <em>Under 10 Seconds</em>
+    </h1>
+
+    <p class="sub">
+      Use this quick calculator to estimate what a typical roof incident could cost.
+      Then tap the button to view <span class="red">professional coverage options</span> built for U.S. homeowners.
+      <br/>
+      <u><em>No forms</em></u> on this page — just a clean snapshot.
+    </p>
+
+    <div class="bar" aria-label="Urgency bar">
+      <div class="pill"><span>Update window:</span> <b id="timer">04:00</b></div>
+      <div class="pill"><span>Status:</span> <b>Active</b></div>
+      <div class="pill"><span>Focus:</span> <b>Homeowners 30+</b></div>
+    </div>
+
+    <section class="card" aria-label="Calculator">
       <div class="card-inner">
-        <!-- Top bar -->
-        <div class="top-bar">
-          <div class="brand">
-            <div class="brand-logo" aria-hidden="true">HR</div>
-            <div class="brand-name">
-              <span>HomeRoofing Network</span>
-              <span>Verified US Roofing Partners</span>
+        <div>
+          <h2 class="calc-title"><span class="red">Modern</span> Roof Cost Snapshot</h2>
+          <p class="calc-desc">
+            Select your home profile to get a <b>directional range</b>.
+            This is <u>not a quote</u> — it’s a quick way to see the budget impact of common roof incidents.
+          </p>
+
+          <div class="controls">
+            <div class="control">
+              <div class="label-line">
+                <label for="sqft" style="margin:0;">Home size (sq ft)</label>
+                <div class="val"><span id="sqftOut">2200</span></div>
+              </div>
+              <input id="sqft" type="range" min="800" max="6000" step="50" value="2200" />
             </div>
-          </div>
-          <div class="trust-badge">
-            <span class="trust-dot"></span>
-            <span>Licensed &amp; insured contractors only</span>
+
+            <div class="row">
+              <div class="control">
+                <label for="incident">Incident type</label>
+                <select id="incident">
+                  <option value="leak" selected>Leak repair</option>
+                  <option value="wind">Wind damage</option>
+                  <option value="hail">Hail damage</option>
+                  <option value="debris">Fallen debris</option>
+                </select>
+              </div>
+
+              <div class="control">
+                <label for="roofAge">Roof age</label>
+                <select id="roofAge">
+                  <option value="0.95">0–5 years</option>
+                  <option value="1.00" selected>6–10 years</option>
+                  <option value="1.10">11–15 years</option>
+                  <option value="1.20">16–20 years</option>
+                  <option value="1.30">20+ years</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="control">
+                <label for="region">Region</label>
+                <select id="region">
+                  <option value="1.00" selected>Midwest (avg)</option>
+                  <option value="1.10">Northeast (higher labor)</option>
+                  <option value="0.95">South (avg)</option>
+                  <option value="1.15">West (higher labor)</option>
+                </select>
+              </div>
+
+              <div class="control">
+                <label for="complexity">Roof complexity</label>
+                <select id="complexity">
+                  <option value="0.95">Simple (easy access)</option>
+                  <option value="1.00" selected>Standard</option>
+                  <option value="1.12">Complex (steep / multi-angles)</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Main grid -->
-        <div class="content-grid">
-          <!-- Left / hero -->
-          <section class="hero" aria-labelledby="hero-title">
-            <div class="hero-eyebrow">
-              <span class="hero-eyebrow-pill">For Homeowners Only</span>
-              <span>Qualify in under 60 seconds</span>
-            </div>
+        <div class="result" aria-live="polite">
+          <p class="big">
+            Estimated risk:<br/>
+            <span class="red"><u id="risk">$—</u></span>
+          </p>
+          <p class="fine">
+            This is a <b>typical</b> range based on common repair patterns.
+            If you want <u>quality roof protection</u> built for homeowners, tap the button below.
+          </p>
 
-            <h1 id="hero-title" class="hero-title">
-              Top-Rated <span class="hero-highlight">Roofing Services</span> for US Homeowners
-            </h1>
-
-            <p class="hero-subtitle">
-              Protect your most valuable asset with
-              <strong>expert roof inspections, repairs, and replacements</strong>.  
-              We match homeowners with trusted, pre-screened roofing contractors in their area.
+          <div class="cta">
+            <button class="btn js-open-modal" id="ctaBtn" type="button">SEE COVERAGE OPTIONS →</button>
+            <p class="micro">
+              Professional provider • <b>paid</b> coverage • <u>no “free” language</u>
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="hero-cta-row">
-              <a href="#quote-form" class="btn-primary">
-                <span>Get My Roof Quote</span>
-                <span class="arrow">→</span>
-              </a>
-              <span class="hero-note">
-                <strong>No obligation.</strong> Only licensed &amp; insured roofing pros.
-              </span>
+    <!-- STEPS -->
+    <section class="steps" aria-label="Next steps">
+      <div class="steps-inner">
+        <h2 class="steps-title">Next Steps to Get <span class="red">Protected</span></h2>
+        <p class="steps-sub">
+          Simple. Professional. Built for U.S. homeowners who want <u>serious</u> roof coverage.
+        </p>
+
+        <div class="steps-grid">
+          <article class="step">
+            <div class="step-media" role="img" aria-label="Fill the form preview">
+              <img src="https://i.postimg.cc/XqJqbZNH/Chat-GPT-Image-7-ene-2026-23-01-39.png" alt="Step 1: Fill the form" loading="lazy" />
+              <div class="step-badge">1</div>
             </div>
-
-            <div class="hero-divider"></div>
-
-            <div class="trust-row">
-              <div class="trust-row-logos">
-                <div class="rating-badge">
-                  <span class="rating-stars">★★★★★</span>
-                  <span>4.8 average homeowner rating</span>
-                </div>
-                <div class="trust-pill">Background-checked contractors</div>
-                <div class="trust-pill">Local &amp; US-based support</div>
-              </div>
-              <div>
-                Serving homeowners needing <strong>repairs, storm damage help</strong>,  
-                or a full <strong>roof replacement</strong>.
-              </div>
+            <div class="step-body">
+              <h3><span class="k">Step 1</span> Fill Out the <span class="red"><u>Form</u></span></h3>
+              <p>Answer a few quick questions so we can match you with the right <b>roof coverage options</b> for your home profile.</p>
             </div>
+          </article>
 
-            <div class="qualify-grid" aria-label="Who this roofing service is for">
-              <div class="qualify-item">
-                <div class="qualify-dot"></div>
-                <div>
-                  <strong>Homeowners only</strong>
-                  You must own the property (no renters).
-                </div>
-              </div>
-
-              <div class="qualify-item">
-                <div class="qualify-dot"></div>
-                <div>
-                  <strong>Single-family homes</strong>
-                  Ideal for detached homes &amp; townhomes.
-                </div>
-              </div>
-
-              <div class="qualify-item">
-                <div class="qualify-dot"></div>
-                <div>
-                  <strong>Roof issues or upgrades</strong>
-                  Leaks, storm damage, aging roof, or upgrades.
-                </div>
-              </div>
-
-              <div class="qualify-item">
-                <div class="qualify-dot"></div>
-                <div>
-                  <strong>US-based properties</strong>
-                  Service network focused on US homeowners.
-                </div>
-              </div>
-
-              <div class="qualify-item">
-                <div class="qualify-dot"></div>
-                <div>
-                  <strong>Ready for estimates</strong>
-                  Open to a inspection &amp; quote.
-                </div>
-              </div>
-
-              <div class="qualify-item">
-                <div class="qualify-dot"></div>
-                <div>
-                  <strong>Insurance claims welcome</strong>
-                  Many partners assist with insurance paperwork.
-                </div>
-              </div>
+          <article class="step">
+            <div class="step-media" role="img" aria-label="We call you preview">
+              <img src="https://i.postimg.cc/MGmpf0vy/Chat-GPT-Image-7-ene-2026-23-01-43.png" alt="Step 2: We call you" loading="lazy" />
+              <div class="step-badge">2</div>
             </div>
-
-            <!-- Testimonials Section -->
-            <section class="testimonials-section">
-              <div class="testimonials-inner">
-                <header class="testimonials-header">
-                  <h2 class="testimonials-title">Our homeowners say it best</h2>
-
-                  <div class="rating-line">
-                    <span class="rating-label">Excellent</span>
-                    <span class="rating-score">4.8 / 5</span>
-
-                    <div class="rating-stars-inline">
-                      <!-- 5 stars Trustpilot style -->
-                      <svg width="24" height="24" viewBox="0 0 32 32">
-                        <rect width="32" height="32" fill="#00b67a"></rect>
-                        <path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/>
-                      </svg>
-                      <svg width="24" height="24" viewBox="0 0 32 32">
-                        <rect width="32" height="32" fill="#00b67a"></rect>
-                        <path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/>
-                      </svg>
-                      <svg width="24" height="24" viewBox="0 0 32 32">
-                        <rect width="32" height="32" fill="#00b67a"></rect>
-                        <path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/>
-                      </svg>
-                      <svg width="24" height="24" viewBox="0 0 32 32">
-                        <rect width="32" height="32" fill="#00b67a"></rect>
-                        <path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/>
-                      </svg>
-                      <svg width="24" height="24" viewBox="0 0 32 32">
-                        <rect width="32" height="32" fill="#00b67a"></rect>
-                        <path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/>
-                      </svg>
-                    </div>
-                  </div>
-
-                  <p class="rating-subtitle">Based on 993 homeowner reviews</p>
-                </header>
-
-                <div class="testimonials-slider">
-                  <button class="slider-arrow slider-left" type="button" aria-label="Previous testimonial">
-                    &#8592;
-                  </button>
-
-                  <div class="slider-window">
-                    <div class="slider-track">
-                      <!-- Card 1 -->
-                      <div class="testimonial-card">
-                        <div class="testimonial-stars">
-                          <!-- 5 stars -->
-                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
-                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
-                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
-                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
-                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
-                        </div>
-                        <p class="testimonial-text">
-                          “HomeRoofing Network got us in touch with a local roofer the same day. They fixed our leak before the next storm hit. Professional from start to finish.”
-                        </p>
-                        <p class="testimonial-author">Mark T., Dallas, TX</p>
-                      </div>
-
-                      <!-- Card 2 -->
-                      <div class="testimonial-card">
-                        <div class="testimonial-stars">
-                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
-                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
-                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
-                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
-                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
-                        </div>
-                        <p class="testimonial-text">
-                          “We needed a full roof replacement after hail damage. The contractor they matched us with handled the insurance claim and kept us updated every step of the way.”
-                        </p>
-                        <p class="testimonial-author">Jennifer L., Denver, CO</p>
-                      </div>
-
-                      <!-- Card 3 -->
-                      <div class="testimonial-card">
-                        <div class="testimonial-stars">
-                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
-                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
-                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
-                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
-                          <svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" fill="#00b67a"></rect><path d="M9.2 27L16 21.8 22.8 27 20.2 18.6 27 13.4h-8.4L16 5l-2.6 8.4H5l6.8 5.2L9.2 27z" fill="#fff"/></svg>
-                        </div>
-                        <p class="testimonial-text">
-                          “Quick response, honest estimate, and the crew left our yard spotless. I’d recommend them to any homeowner needing roof work.”
-                        </p>
-                        <p class="testimonial-author">Chris D., Tampa, FL</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <button class="slider-arrow slider-right" type="button" aria-label="Next testimonial">
-                    &#8594;
-                  </button>
-                </div>
-              </div>
-            </section>
-          </section>
-
-          <!-- Right / form -->
-          <aside class="form-card" aria-label="Roofing quote request form">
-            <div class="seal" aria-hidden="true">
-              Free<br />
-              Roof Quote
+            <div class="step-body">
+              <h3><span class="k">Step 2</span> We <span class="red"><u>Call</u></span> You</h3>
+              <p>A licensed representative reviews availability in your area and explains <b>coverage details</b> in plain English.</p>
             </div>
+          </article>
 
-            <div class="form-header">
-              <div class="form-header-title">
-                Check if you qualify for a roof offer
-              </div>
-              <div class="form-header-sub">
-                Answer one quick question to see if we can match you with a local roofing specialist.
-              </div>
+          <article class="step">
+            <div class="step-media" role="img" aria-label="Always covered preview">
+              <img src="https://i.postimg.cc/wMTyjf2D/Chat-GPT-Image-7-ene-2026-23-01-36.png" alt="Step 3: You're covered" loading="lazy" />
+              <div class="step-badge">3</div>
             </div>
-
-            <!-- Simplified form: homeowner radio + button -->
-            <form
-              id="quote-form"
-              action="https://your-partner-link.com"
-              method="get"
-            >
-              <div class="form-section-label">Homeownership</div>
-
-              <div class="field-group">
-                <label>
-                  Do you own this home?
-                  <span class="required">*</span>
-                </label>
-                <div class="radio-group">
-                  <label class="radio-pill">
-                    <input type="radio" name="homeowner" value="yes" required />
-                    <span>Yes, I own this home</span>
-                  </label>
-                  <label class="radio-pill">
-                    <input type="radio" name="homeowner" value="no" />
-                    <span>No, I am renting</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="submit-row">
-                <button type="submit" class="btn-submit">
-                  Get My Offer Quote
-                </button>
-                <div class="submit-caption">
-                  By clicking “Get My Offer Quote” you may be redirected to one of our
-                  trusted roofing partners to complete your request.
-                </div>
-              </div>
-
-              <p class="disclaimer">
-                Your answer helps us verify that you are a homeowner and qualify for our roofing partner network.
-              </p>
-            </form>
-          </aside>
+            <div class="step-body">
+              <h3><span class="k">Step 3</span> Stay <span class="red"><u>Covered</u></span></h3>
+              <p>Choose the plan that fits your roof and budget—so when incidents happen, you’re not left guessing.</p>
+            </div>
+          </article>
         </div>
 
-        <!-- Bottom strip -->
-        <div class="footer-strip">
-          <span>
-            <strong>HomeRoofing Network</strong> – Connecting US homeowners with trusted roofing pros.
-          </span>
-          <div class="footer-links">
-            <a href="#0">Privacy Policy</a>
-            <a href="#0">Terms of Use</a>
-            <a href="#0">Do Not Sell My Info</a>
+        <div class="steps-cta">
+          <button class="btn js-open-modal" id="stepsCta" type="button">CONTINUE →</button>
+          <p class="micro">Professional provider • paid coverage • <b>no gimmicks</b></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot">
+      Disclosure: This page provides a directional estimate for informational purposes only. Actual costs and coverage availability vary by state, roof condition, and plan selection. This is not a binding offer.
+    </div>
+  </div>
+
+  <!-- ===================== MODAL (Dynamic Steps Form) ===================== -->
+  <div class="rg-modal" id="rgModal" aria-hidden="true">
+    <div class="rg-modal__backdrop" data-rg-close="1"></div>
+
+    <div class="rg-modal__card" role="dialog" aria-modal="true" aria-label="Roof coverage form">
+      <button class="rg-modal__close" type="button" aria-label="Close" data-rg-close="1">✕</button>
+
+      <h1 class="rg-modal__h1">
+        Get Your <span class="rg-red">Roof Coverage</span> Options
+      </h1>
+
+      <div class="rg-progress" aria-label="Progress">
+        <div class="rg-progress__bar"><span id="rgProgressFill"></span></div>
+        <div class="rg-progress__text"><span id="rgProgressText">Step 1 of 5</span></div>
+      </div>
+
+      <div class="rg-steps">
+        <!-- STEP 1 -->
+        <div class="rg-step" data-step="1">
+          <h2 class="rg-q">What is your ZIP Code?</h2>
+          <p class="rg-help">Enter a valid <b>U.S. ZIP</b> (5 digits). Example: <u>90210</u></p>
+
+          <div class="rg-field">
+            <input id="rgZip" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="ZIP Code (e.g., 90210)" maxlength="5" />
+            <div class="rg-error" id="rgZipErr" aria-live="polite"></div>
+          </div>
+
+          <div class="rg-actions">
+            <button class="rg-btn rg-btn--primary" type="button" id="rgNext1">Next →</button>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="rg-step" data-step="2" style="display:none;">
+          <h2 class="rg-q">What type of roofing work do you need?</h2>
+
+          <div class="rg-radioGrid" role="radiogroup" aria-label="Roofing work">
+            <label class="rg-radio"><input type="radio" name="workType" value="Replace" /><span>Replace</span></label>
+            <label class="rg-radio"><input type="radio" name="workType" value="Repair" /><span>Repair</span></label>
+            <label class="rg-radio"><input type="radio" name="workType" value="Not Sure" /><span>Not Sure</span></label>
+          </div>
+
+          <div class="rg-error" id="rgWorkErr" aria-live="polite"></div>
+
+          <div class="rg-actions">
+            <button class="rg-btn" type="button" data-rg-back>← Back</button>
+            <button class="rg-btn rg-btn--primary" type="button" id="rgNext2">Next →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="rg-step" data-step="3" style="display:none;">
+          <h2 class="rg-q">What type of roofing material are you looking for?</h2>
+
+          <div class="rg-radioGrid rg-radioGrid--two" role="radiogroup" aria-label="Roof material">
+            <label class="rg-radio"><input type="radio" name="material" value="Asphalt" /><span>Asphalt</span></label>
+            <label class="rg-radio"><input type="radio" name="material" value="Composite" /><span>Composite</span></label>
+            <label class="rg-radio"><input type="radio" name="material" value="Natural Slate" /><span>Natural Slate</span></label>
+            <label class="rg-radio"><input type="radio" name="material" value="Tile" /><span>Tile</span></label>
+            <label class="rg-radio"><input type="radio" name="material" value="Wood Shake" /><span>Wood Shake</span></label>
+            <label class="rg-radio"><input type="radio" name="material" value="Metal" /><span>Metal</span></label>
+          </div>
+
+          <div class="rg-error" id="rgMatErr" aria-live="polite"></div>
+
+          <div class="rg-actions">
+            <button class="rg-btn" type="button" data-rg-back>← Back</button>
+            <button class="rg-btn rg-btn--primary" type="button" id="rgNext3">Next →</button>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="rg-step" data-step="4" style="display:none;">
+          <h2 class="rg-q">Do you own your home?</h2>
+
+          <div class="rg-radioGrid" role="radiogroup" aria-label="Ownership">
+            <label class="rg-radio"><input type="radio" name="ownership" value="Yes" /><span>Yes</span></label>
+            <label class="rg-radio"><input type="radio" name="ownership" value="No, but I am authorized to make improvements" /><span>No, but I am authorized to make improvements</span></label>
+            <label class="rg-radio"><input type="radio" name="ownership" value="No" /><span>No</span></label>
+          </div>
+
+          <div class="rg-error" id="rgOwnErr" aria-live="polite"></div>
+
+          <div class="rg-actions">
+            <button class="rg-btn" type="button" data-rg-back>← Back</button>
+            <button class="rg-btn rg-btn--primary" type="button" id="rgNext4">Next →</button>
+          </div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="rg-step" data-step="5" style="display:none;">
+          <h2 class="rg-q"><span class="rg-red">Almost Done!</span></h2>
+          <p class="rg-help">Enter your details to receive <b>professional</b> coverage options.</p>
+
+          <div class="rg-grid2">
+            <div class="rg-field">
+              <label class="rg-label" for="rgName">Name</label>
+              <input id="rgName" type="text" autocomplete="name" placeholder="John Carter" />
+            </div>
+            <div class="rg-field">
+              <label class="rg-label" for="rgPhone">Phone</label>
+              <input id="rgPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(555) 123-4567" />
+            </div>
+          </div>
+
+          <div class="rg-grid2">
+            <div class="rg-field">
+              <label class="rg-label" for="rgEmail">Email</label>
+              <input id="rgEmail" type="email" autocomplete="email" placeholder="john@email.com" />
+            </div>
+            <div class="rg-field">
+              <label class="rg-label" for="rgAddress">Home Address</label>
+              <input id="rgAddress" type="text" autocomplete="street-address" placeholder="123 Main St" />
+            </div>
+          </div>
+
+          <div class="rg-error" id="rgFinalErr" aria-live="polite"></div>
+
+          <div class="rg-actions">
+            <button class="rg-btn" type="button" data-rg-back>← Back</button>
+            <button class="rg-btn rg-btn--primary" type="button" id="rgSubmit">Finish & Send →</button>
+          </div>
+
+          <p class="rg-disclaimer">
+            By continuing, you agree to be contacted regarding coverage options. This is a <b>paid</b> coverage product.
+          </p>
+        </div>
+
+        <!-- SUCCESS -->
+        <div class="rg-step" data-step="success" style="display:none;">
+          <h2 class="rg-q"><span class="rg-red">Submitted!</span></h2>
+          <p class="rg-help">Your info has been sent. Next step: a representative can review plan availability in your area.</p>
+
+          <div class="rg-actions">
+            <button class="rg-btn rg-btn--primary" type="button" data-rg-close="1">Close</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- JS for testimonials slider -->
+  <!-- ===================== JS (All in one place) ===================== -->
   <script>
-    (function () {
-      const sliderWindow = document.querySelector('.slider-window');
-      const prev = document.querySelector('.slider-left');
-      const next = document.querySelector('.slider-right');
+    // ---------- Countdown ----------
+    (function(){
+      const el = document.getElementById("timer");
+      let remaining = 4 * 60;
+      const pad = n => String(n).padStart(2,"0");
+      function tick(){
+        const m = Math.floor(remaining / 60);
+        const s = remaining % 60;
+        el.textContent = `${pad(m)}:${pad(s)}`;
+        remaining = Math.max(0, remaining - 1);
+        setTimeout(tick, 1000);
+      }
+      tick();
+    })();
 
-      if (!sliderWindow || !prev || !next) return;
+    // ---------- Calculator ----------
+    (function(){
+      const sqft = document.getElementById("sqft");
+      const sqftOut = document.getElementById("sqftOut");
+      const incident = document.getElementById("incident");
+      const roofAge = document.getElementById("roofAge");
+      const region = document.getElementById("region");
+      const complexity = document.getElementById("complexity");
+      const riskEl = document.getElementById("risk");
 
-      function slide(dir) {
-        sliderWindow.scrollBy({
-          left: dir * sliderWindow.offsetWidth * 0.9,
-          behavior: "smooth"
-        });
+      function dollars(n){
+        return n.toLocaleString("en-US", { style:"currency", currency:"USD", maximumFractionDigits:0 });
       }
 
-      prev.addEventListener("click", () => slide(-1));
-      next.addEventListener("click", () => slide(1));
+      function compute(){
+        const sq = Number(sqft.value);
+        sqftOut.textContent = sq;
+
+        const type = incident.value;
+        const age = Number(roofAge.value);
+        const reg = Number(region.value);
+        const comp = Number(complexity.value);
+
+        const base = { leak: 650, wind: 1400, hail: 3200, debris: 2600 }[type];
+        const sizeFactor = 0.78 + Math.pow(sq / 2200, 0.55);
+        const estimate = Math.round(base * sizeFactor * age * reg * comp * 1.22);
+
+        const low = Math.round(estimate * 0.85);
+        const high = Math.round(estimate * 1.18);
+        riskEl.textContent = `${dollars(low)} – ${dollars(high)}`;
+      }
+
+      [sqft, incident, roofAge, region, complexity].forEach(el => el.addEventListener("input", compute));
+      compute();
+    })();
+
+    // ---------- Modal + Dynamic Steps + Zapier ----------
+    (function(){
+      const ZAPIER_URL = "https://hooks.zapier.com/hooks/catch/15157064/uw0iins/";
+
+      const modal = document.getElementById("rgModal");
+      const progressFill = document.getElementById("rgProgressFill");
+      const progressText = document.getElementById("rgProgressText");
+      const steps = Array.from(modal.querySelectorAll(".rg-step"));
+
+      let current = 1;
+
+      const state = {
+        zip: "",
+        workType: "",
+        material: "",
+        ownership: "",
+        name: "",
+        phone: "",
+        email: "",
+        address: ""
+      };
+
+      function setErr(id, msg){
+        const el = document.getElementById(id);
+        if(el) el.textContent = msg || "";
+      }
+
+      function showStep(n){
+        current = n;
+        steps.forEach(s => s.style.display = "none");
+        const stepEl = modal.querySelector(`.rg-step[data-step="${n}"]`);
+        if(stepEl) stepEl.style.display = "block";
+
+        if(n === "success"){
+          progressText.textContent = "Done";
+          progressFill.style.width = "100%";
+          return;
+        }
+
+        const stepNum = Number(n);
+        const pct = Math.round((stepNum - 1) / 4 * 100);
+        progressFill.style.width = pct + "%";
+        progressText.textContent = `Step ${stepNum} of 5`;
+      }
+
+      function openModal(){
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden","false");
+        document.documentElement.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+        showStep(1);
+
+        // reset errors
+        setErr("rgZipErr","");
+        setErr("rgWorkErr","");
+        setErr("rgMatErr","");
+        setErr("rgOwnErr","");
+        setErr("rgFinalErr","");
+      }
+
+      function closeModal(){
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden","true");
+        document.documentElement.style.overflow = "";
+        document.body.style.overflow = "";
+      }
+
+      // Open modal from ANY CTA button in the page (your .btn)
+      document.querySelectorAll(".js-open-modal").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          openModal();
+        });
+      });
+
+      // Close handlers
+      modal.addEventListener("click", (e) => {
+        const t = e.target;
+        if(t && t.getAttribute && t.getAttribute("data-rg-close") === "1") closeModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if(e.key === "Escape" && modal.classList.contains("open")) closeModal();
+      });
+
+      // ZIP validation: 5 digits, real US range (00501–99950)
+      function isValidUSZip(zip){
+        if(!/^\d{5}$/.test(zip)) return false;
+        const z = Number(zip);
+        return z >= 501 && z <= 99950;
+      }
+
+      const zipInput = document.getElementById("rgZip");
+      zipInput.addEventListener("input", () => {
+        zipInput.value = zipInput.value.replace(/[^\d]/g,"").slice(0,5);
+        setErr("rgZipErr","");
+      });
+
+      document.getElementById("rgNext1").addEventListener("click", () => {
+        const zip = (zipInput.value || "").trim();
+        if(!isValidUSZip(zip)){
+          setErr("rgZipErr","Please enter a valid 5-digit U.S. ZIP Code.");
+          return;
+        }
+        state.zip = zip;
+        showStep(2);
+      });
+
+      document.getElementById("rgNext2").addEventListener("click", () => {
+        const picked = modal.querySelector('input[name="workType"]:checked');
+        if(!picked){
+          setErr("rgWorkErr","Please select an option to continue.");
+          return;
+        }
+        setErr("rgWorkErr","");
+        state.workType = picked.value;
+        showStep(3);
+      });
+
+      document.getElementById("rgNext3").addEventListener("click", () => {
+        const picked = modal.querySelector('input[name="material"]:checked');
+        if(!picked){
+          setErr("rgMatErr","Please select a material to continue.");
+          return;
+        }
+        setErr("rgMatErr","");
+        state.material = picked.value;
+        showStep(4);
+      });
+
+      document.getElementById("rgNext4").addEventListener("click", () => {
+        const picked = modal.querySelector('input[name="ownership"]:checked');
+        if(!picked){
+          setErr("rgOwnErr","Please select an option to continue.");
+          return;
+        }
+        setErr("rgOwnErr","");
+        state.ownership = picked.value;
+        showStep(5);
+      });
+
+      // Back buttons
+      modal.querySelectorAll("[data-rg-back]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const curr = Number(current);
+          if(curr > 1) showStep(curr - 1);
+        });
+      });
+
+      function isValidEmail(email){
+        return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+      }
+      function normalizePhone(p){
+        return (p || "").replace(/[^\d]/g,"").slice(0,15);
+      }
+
+      const nameEl = document.getElementById("rgName");
+      const phoneEl = document.getElementById("rgPhone");
+      const emailEl = document.getElementById("rgEmail");
+      const addrEl = document.getElementById("rgAddress");
+
+      [nameEl, phoneEl, emailEl, addrEl].forEach(el => el.addEventListener("input", () => setErr("rgFinalErr","")));
+
+      async function sendToZapier(payload){
+        try{
+          await fetch(ZAPIER_URL, {
+            method: "POST",
+            headers: {"Content-Type":"application/json"},
+            body: JSON.stringify(payload)
+          });
+          return true;
+        }catch(err){
+          try{
+            await fetch(ZAPIER_URL, {
+              method: "POST",
+              mode: "no-cors",
+              headers: {"Content-Type":"application/json"},
+              body: JSON.stringify(payload)
+            });
+            return true;
+          }catch(e2){
+            return false;
+          }
+        }
+      }
+
+      document.getElementById("rgSubmit").addEventListener("click", async () => {
+        const name = (nameEl.value || "").trim();
+        const phoneRaw = (phoneEl.value || "").trim();
+        const email = (emailEl.value || "").trim();
+        const address = (addrEl.value || "").trim();
+        const phoneDigits = normalizePhone(phoneRaw);
+
+        if(name.length < 2){ setErr("rgFinalErr","Please enter your name."); return; }
+        if(phoneDigits.length < 10){ setErr("rgFinalErr","Please enter a valid phone number (10+ digits)."); return; }
+        if(!isValidEmail(email)){ setErr("rgFinalErr","Please enter a valid email address."); return; }
+        if(address.length < 5){ setErr("rgFinalErr","Please enter your home address."); return; }
+
+        setErr("rgFinalErr","");
+
+        state.name = name;
+        state.phone = phoneRaw;
+        state.email = email;
+        state.address = address;
+
+        const payload = {
+          zip: state.zip,
+          work_type: state.workType,
+          roofing_material: state.material,
+          home_ownership: state.ownership,
+          name: state.name,
+          phone: state.phone,
+          email: state.email,
+          address: state.address,
+          page_url: window.location.href,
+          user_agent: navigator.userAgent,
+          submitted_at: new Date().toISOString()
+        };
+
+        const btn = document.getElementById("rgSubmit");
+        const oldTxt = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = "SENDING…";
+
+        const ok = await sendToZapier(payload);
+
+        btn.disabled = false;
+        btn.textContent = oldTxt;
+
+        if(ok){
+          showStep("success");
+          /* Meta / Facebook Pixel */
+fbq('track', 'Lead');
+
+/* Taboola Pixel */
+_tfa.push({ notify: 'event', name: 'lead' });
+
+        }else{
+          setErr("rgFinalErr","Could not send right now. Please try again.");
+        }
+      });
+
+      // Optional: close modal and reset when closing
+      modal.querySelectorAll('[data-rg-close="1"]').forEach(el => {
+        el.addEventListener("click", () => closeModal());
+      });
+
+      // If you want steps CTA to also open modal (already has .js-open-modal)
+      // Nothing else needed.
+
     })();
   </script>
 </body>
